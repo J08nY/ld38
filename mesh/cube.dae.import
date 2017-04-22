@@ -6,7 +6,7 @@ path="res://.import/cube.dae-8dcb9af004f5b3c1e6a0f8dcbd4194bf.scn"
 
 [params]
 
-nodes/root_type="Spatial"
+nodes/root_type="StaticBody"
 nodes/root_name="Scene Root"
 nodes/custom_script=""
 materials/location=0
