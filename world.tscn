@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://world.gd" type="Script" id=1]
 
 [node name="World" type="Spatial"]
 
@@ -8,7 +8,7 @@ script = ExtResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06188, 2.015, 10.5061 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06188, 2.015, 15.5061 )
 layers = 1
 light_color = Color( 0.847656, 0.838964, 0.291382, 1 )
 light_energy = 3.0

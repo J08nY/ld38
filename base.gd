@@ -1,9 +1,12 @@
 extends Node
 
 var World = preload("res://world.tscn")
+var Incubator = preload("res://incubator.tscn")
 
 func _ready():
-  pass
+  var inc = Incubator.instance()
+  inc.translate(Vector3(-2, -2, -15))
+  add_child(inc)
 
 func _process(delta):
   pass
