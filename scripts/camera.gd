@@ -1,18 +1,21 @@
-extends Camera
+extends InterpolatedCamera
 
 var selected = null
 
 func _ready():
-  pass
+  set_target(get_parent().get_node("overview"))
+  self.selected = get_parent().get_node("center")
   
-func select(what):
+func select(what, new_target):
+  set_target(new_target)
   if self.selected != what:
-    set_translation(what.translation + Vector3(1,3,0))
-  look_at(what.translation, Vector3(0,1,0))
+    set_interpolation_enabled(true)
+    #set_translation(what.translation + Vector3(1,3,0))
   self.selected = what
 
 func reselect():
   if self.selected != null:
+    set_interpolation_enabled(false)
     look_at(self.selected.translation, Vector3(0,1,0))
 
 func rot_around(amount):

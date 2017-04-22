@@ -42,4 +42,4 @@ func _make_ball(size, center):
           
 func _on_click():
   var cam = get_tree().get_root().get_camera()
-  cam.select(self)
+  cam.select(self, get_node("point"))

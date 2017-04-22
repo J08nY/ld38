@@ -15,12 +15,9 @@ func set_world(x, y, world):
   world.set_translation(pos.global_transform.origin)
 
 func push_world(world):
-  print("pushing")
   for x in range(4):
     for y in range(2):
-      print("h")
       if self.worlds[x][y] == null:
-        print("set")
         set_world(x, y, world)
         return
 
@@ -31,8 +28,10 @@ func _on_body_input_event( camera, event, click_pos, click_normal, shape_idx ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT:
     print("body")
     var cam = get_tree().get_root().get_camera()
-    cam.select(self)
+    cam.select(self, get_node("point"))
 
 func _on_panel_input_event( camera, event, click_pos, click_normal, shape_idx ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT:
     print("panel")
+    var cam = get_tree().get_root().get_camera()
+    cam.select(self, get_node("point"))

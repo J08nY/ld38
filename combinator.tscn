@@ -1,0 +1,196 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://mesh/combinator.dae" type="PackedScene" id=1]
+[ext_resource path="res://scripts/combinator.gd" type="Script" id=2]
+[ext_resource path="res://combinator_panel.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ConvexPolygonShape" id=4]
+
+points = PoolVector3Array( 1, -1, -0.999512, 1, -1, 1, -1, -1, 0.999512, -0.999512, -1, -1, 1, 1, -0.999512, -0.999512, 1, -1, -1, 1, 0.999512, 0.999512, 1, 1, 1, -1, -0.999512, 1, 1, -0.999512, 0.999512, 1, 1, 1, -1, 1, 1, -1, 1, 0.999512, 1, 1, -1, 1, 0.999512, -1, -1, 0.999512, -1, -1, 0.999512, -1, 1, 0.999512, -0.999512, 1, -1, -0.999512, -1, -1, 1, 1, -0.999512, 1, -1, -0.999512, -0.999512, -1, -1, -0.999512, 1, -1 )
+
+[sub_resource type="ConvexPolygonShape" id=5]
+
+points = PoolVector3Array( -1, -1, 1.46973, -1, 1, 1.46973, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, 1, 1.46973, 1, -1, 1.46973, 1, -1, 1.46973, 1, 1, 1.46973, -1, 1, 1.46973, -1, -1, 1.46973, -1, -1, -1, 1, -1, -1, 1, -1, 1.46973, -1, -1, 1.46973, 1, 1, -1, -1, 1, -1, -1, 1, 1.46973, 1, 1, 1.46973 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+
+flags_transparent = false
+flags_unshaded = true
+flags_on_top = false
+flags_use_point_size = false
+flags_fixed_size = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+albedo_color = Color( 0.7, 0.7, 0.7, 1 )
+specular_mode = 0
+specular_color = Color( 0.1, 0.1, 0.1, 1 )
+specular_metalness = 0.1
+specular_roughness = 0.0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+height_enabled = false
+subsurf_scatter_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector2( 1, 1 )
+uv1_offset = Vector2( 0, 0 )
+uv2_scale = Vector2( 1, 1 )
+uv2_offset = Vector2( 0, 0 )
+
+[node name="Combinator" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+shape_count = 1
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shapes/0/trigger = true
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody"]
+
+shape = SubResource( 4 )
+trigger = true
+_update_shape_index = 0
+
+[node name="StaticBody" type="StaticBody" parent="Cube.1"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+shape_count = 1
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shapes/0/trigger = true
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube.1/StaticBody"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 5 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Viewport" type="Viewport" parent="."]
+
+size = Vector2( 400, 400 )
+own_world = true
+world = null
+transparent_bg = false
+msaa = 0
+hdr = false
+disable_3d = false
+render_target_v_flip = true
+render_target_clear_on_new_frame = true
+render_target_update_mode = 3
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+
+[node name="CombinatorPanel" parent="Viewport" instance=ExtResource( 3 )]
+
+[node name="Area" type="Area" parent="."]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.434383, 0.698751 )
+input_ray_pickable = true
+input_capture_on_drag = false
+shape_count = 1
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shapes/0/trigger = true
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layers = 1
+collision_mask = 1
+
+[node name="Quad" type="Quad" parent="Area"]
+
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.955984, 0 )
+layers = 1
+material_override = SubResource( 2 )
+cast_shadow = 1
+extra_cull_margin = 0.0
+visible_in_all_rooms = false
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+axis = 1
+size = Vector2( 2, 2 )
+offset = Vector2( 0, 0 )
+centered = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+
+shape = SubResource( 3 )
+trigger = true
+_update_shape_index = 0
+
+[node name="spawn" type="Position3D" parent="."]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.809103, 1.6303, -1.32872 )
+
+[node name="point" type="Camera" parent="."]
+
+transform = Transform( -3.09086e-08, -0.707107, 0.707107, -1.28028e-08, 0.707107, 0.707107, -1, 1.28028e-08, -3.09086e-08, 2.2, 3, 0 )
+projection = 0
+fov = 60.0
+near = 0.1
+far = 100.0
+keep_aspect = 1
+current = false
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+
+[connection signal="input_event" from="Cube/StaticBody" to="." method="_on_body_input_event"]
+
+[connection signal="input_event" from="Cube.1/StaticBody" to="." method="_on_panel_input_event"]
+
+[connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
+
+
