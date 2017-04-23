@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/base.gd" type="Script" id=1]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=2]
 [ext_resource path="res://world.tscn" type="PackedScene" id=3]
 [ext_resource path="res://incubator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://combinator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Spatial"]
 
@@ -25,7 +27,7 @@ h_offset = 0.0
 v_offset = 0.0
 target = NodePath("")
 speed = 1.0
-enabled = true
+enabled = false
 script = ExtResource( 2 )
 
 [node name="OmniLight" type="OmniLight" parent="Camera"]
@@ -33,7 +35,7 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.11108 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
+light_energy = 2.0
 light_negative = false
 light_specular = 0.5
 light_cull_mask = -1
@@ -64,9 +66,11 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
 
+[node name="center" type="Position3D" parent="."]
+
 [node name="overview" type="Camera" parent="."]
 
-transform = Transform( 1, 0, 0, 0, 0.771128, 0.63668, 0, -0.63668, 0.771128, 0, 4.08988, 3.34826 )
+transform = Transform( 1, 0, 0, 0, 0.73815, 0.674637, 0, -0.674637, 0.73815, -0.0103998, 4.22607, 2.71686 )
 projection = 0
 fov = 60.0
 near = 0.1
@@ -78,6 +82,8 @@ environment = null
 h_offset = 0.0
 v_offset = 0.0
 
-[node name="center" type="Position3D" parent="."]
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
 
 

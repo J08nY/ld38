@@ -3,13 +3,16 @@ extends InterpolatedCamera
 var selected = null
 
 func _ready():
-  set_target(get_parent().get_node("overview"))
-  self.selected = get_parent().get_node("center")
+  reset()
   
 func select(what, new_target):
+  print("before set")
   set_target(new_target)
+  print("after set")
   if self.selected != what:
+    print("before interp")
     set_interpolation_enabled(true)
+    print("after interp")
     #set_translation(what.translation + Vector3(1,3,0))
   self.selected = what
 
@@ -24,6 +27,11 @@ func rot_around(amount):
     var rotated = relative.rotated(Vector3(0,1,0), amount)
     set_translation(self.selected.translation + rotated)
     reselect()
+    
+func reset():
+  set_target(get_parent().get_node("overview"))
+  set_interpolation_enabled(true)
+  self.selected = get_parent().get_node("center")
 
 func get_selected():
   return self.selected

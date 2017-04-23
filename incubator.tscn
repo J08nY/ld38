@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://mesh/incubator.dae" type="PackedScene" id=1]
 [ext_resource path="res://scripts/incubator.gd" type="Script" id=2]
+[ext_resource path="res://gray_mat.tres" type="Material" id=3]
 
-[sub_resource type="ConvexPolygonShape" id=4]
+[sub_resource type="ConvexPolygonShape" id=1]
 
 points = PoolVector3Array( 1, -1, 1, -0.999512, -1, -1, 1, -1, -0.999512, -0.999512, 1, -1, 0.999512, 1, 1, 1, 1, -0.999512, 1, 1, -0.999512, 1, -1, 1, 1, -1, -0.999512, 0.999512, 1, 1, -1, -1, 0.999512, 1, -1, 1, -1, -1, 0.999512, -0.999512, 1, -1, -0.999512, -1, -1, 1, -1, -0.999512, -0.999512, 1, -1, 1, 1, -0.999512, -1, -1, 0.999512, -1, 1, 0.999512, 0.999512, 1, 1, -1, 1, 0.999512, -1, 1, 0.999512, -0.999512, -1, -1 )
 
@@ -54,13 +55,14 @@ script = ExtResource( 2 )
 [node name="Cube" parent="."]
 
 editor/display_folded = true
+material_override = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
 shape_count = 1
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shapes/0/trigger = true
 collision_layer = 1
@@ -72,13 +74,14 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody"]
 
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
 [node name="Cube.1" parent="."]
 
 editor/display_folded = true
+material_override = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube.1"]
 
@@ -100,6 +103,38 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 0
+
+[node name="Cylinder" parent="."]
+
+material_override = ExtResource( 3 )
+
+[node name="Cylinder.1" parent="."]
+
+material_override = ExtResource( 3 )
+
+[node name="Cylinder.2" parent="."]
+
+material_override = ExtResource( 3 )
+
+[node name="Cylinder.3" parent="."]
+
+material_override = ExtResource( 3 )
+
+[node name="Cylinder.4" parent="."]
+
+material_override = ExtResource( 3 )
+
+[node name="Cylinder.5" parent="."]
+
+material_override = ExtResource( 3 )
+
+[node name="Cylinder.6" parent="."]
+
+material_override = ExtResource( 3 )
+
+[node name="Cylinder.7" parent="."]
+
+material_override = ExtResource( 3 )
 
 [node name="cover" parent="."]
 
@@ -145,7 +180,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732647, 1.64196, -0.97198 )
 
 [node name="point" type="Camera" parent="."]
 
-transform = Transform( -3.09086e-08, -0.707107, 0.707107, -1.28028e-08, 0.707107, 0.707107, -1, 1.28028e-08, -3.09086e-08, 2.2, 3, 0 )
+transform = Transform( -3.09086e-08, -0.707107, 0.707107, -1.28028e-08, 0.707107, 0.707107, -1, 1.28028e-08, -3.09086e-08, 2.2, 3.5, 0 )
 projection = 0
 fov = 60.0
 near = 0.1
@@ -156,6 +191,26 @@ cull_mask = 1048575
 environment = null
 h_offset = 0.0
 v_offset = 0.0
+
+[node name="OmniLight" type="OmniLight" parent="."]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05032, 2.05093, 1.5916 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 5.0
+light_negative = false
+light_specular = 0.5
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_max_distance = 0.0
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 0
+omni_shadow_detail = 1
 
 [connection signal="input_event" from="Cube/StaticBody" to="." method="_on_body_input_event"]
 

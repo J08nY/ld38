@@ -1,7 +1,9 @@
 config_version=3
+config_version=null
+
 [application]
 
-name="ld38"
+name="World Factory^TM"
 main_scene="res://base.tscn"
 icon="res://icon.png"
 
