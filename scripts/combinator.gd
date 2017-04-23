@@ -1,9 +1,11 @@
 extends Spatial
 
 var prev_pos = null
+var panel = null
 
 func _ready():
   get_node("Area/Quad").get_material_override().set_texture(SpatialMaterial.DIFFUSE_LAMBERT, get_node("Viewport").get_texture())
+  self.panel = get_node("Viewport/CombinatorPanel")
   set_process_input(true)
 
 func _on_Area_input_event( camera, event, click_pos, click_normal, shape_idx ):
@@ -24,13 +26,14 @@ func _on_Area_input_event( camera, event, click_pos, click_normal, shape_idx ):
   get_node("Viewport").input(event)
 
 func _on_body_input_event( camera, event, click_pos, click_normal, shape_idx ):
-  if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT:
+  if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
     print("body")
     var cam = get_tree().get_root().get_camera()
     cam.select(self, get_node("point"))
 
 func _on_panel_input_event( camera, event, click_pos, click_normal, shape_idx ):
-  if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT:
+  if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
     print("panel")
-    var cam = get_tree().get_root().get_camera()
-    cam.select(self, get_node("point"))
+    get_node("animation").play("click")
+    
+    

@@ -7,14 +7,14 @@ path="res://.import/incubator.dae-2e04073c4fc20dcee8f5f14ec9979ed0.scn"
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_name="Incubator"
 nodes/custom_script=""
 materials/location=0
 materials/storage=0
 geometry/compress=true
 geometry/ensure_tangents=true
 geometry/storage=0
-animation/import=true
+animation/import=false
 animation/fps=15
 animation/filter_script=""
 animation/optimizer/enabled=true

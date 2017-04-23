@@ -35,7 +35,31 @@ func _input(event):
       self.cam.translate(Vector3(0,-0.1,0))
     if event.scancode == KEY_W:
       self.cam.translate(Vector3(0,0.1,0))
-    if event.scancode == KEY_H:
-      var s = self.cam.get_selected()
-      if s != null:
-        get_node("Incubator").push_world(s)
+    
+    if event.is_pressed():
+      if event.scancode == KEY_H:
+        var s = self.cam.get_selected()
+        if s != null:
+          get_node("Incubator").push_world(s)
+      if event.scancode == KEY_N:
+        var w = Wrld.instance()
+        w.set_scale(Vector3(0.02, 0.02, 0.02))
+        add_child(w)
+        get_node("Incubator").push_world(w)
+      if event.scancode == KEY_Q:
+        var w = get_node("World")
+        if w != null:
+          var pos = get_node("cmb2inc")
+          w.set_translation(Vector3(0,0,0))
+          remove_child(w)
+          pos.add_child(w)
+          get_node("AnimationPlayer").play("cmb2inc")
+        
+
+func _on_AnimationPlayer_animation_finished( name ):
+  if name == "cmb2inc":
+    var w = get_node("cmb2inc/World")
+    var pos = get_node("cmb2inc")
+    pos.remove_child(w)
+    add_child(w)
+    w.set_translation(pos.get_translation())

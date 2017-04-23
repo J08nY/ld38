@@ -42,7 +42,7 @@
          "name": "Nucleotids",
          "desc": "Bunch of nucleotids will step up your life game. These are building blocks of nucleic acids.",
          "cost": 300},
-        {"id": "nucleic_acid",
+       {"id": "nucleic_acid",
          "name": "Nucleic acids",
          "desc": "",
          "cost": 400},
@@ -77,5 +77,4 @@
          "cost": 5}
     ]
 }
-
-
+ 

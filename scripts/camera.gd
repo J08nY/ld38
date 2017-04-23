@@ -6,13 +6,9 @@ func _ready():
   reset()
   
 func select(what, new_target):
-  print("before set")
   set_target(new_target)
-  print("after set")
   if self.selected != what:
-    print("before interp")
     set_interpolation_enabled(true)
-    print("after interp")
     #set_translation(what.translation + Vector3(1,3,0))
   self.selected = what
 

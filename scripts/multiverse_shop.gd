@@ -1,18 +1,14 @@
 extends Control
 
-var data = null
+var Items = preload("res://scripts/items.gd")
 
 func _ready():
   var map = {"1": get_node("tabs/*/items"),
             "2": get_node("tabs/**/items"),
             "3": get_node("tabs/***/items"),
             "other": get_node("tabs/other/items")}
-  var file = File.new()
-  file.open("res://assets/shop.json", File.READ)
-  var content = file.get_as_text()
-  file.close()
-  self.data = parse_json(content)
-  for k in self.data.keys():
+  var items = Items.new()
+  for k in items.data.keys():
     var tree = map[k]
     var root = tree.create_item()
     tree.set_columns(2)
@@ -23,8 +19,8 @@ func _ready():
     tree.set_column_min_width(1,40)
     tree.set_hide_root(true)
     tree.set_select_mode(Tree.SELECT_ROW)
-    for i in range(self.data[k].size()):
-      var item = self.data[k][i]
+    for i in range(items.data[k].size()):
+      var item = items.data[k][i]
       var itm = tree.create_item(root)
       itm.set_text(0, item["name"])
       itm.set_text(1, str(item["cost"]))
@@ -44,10 +40,7 @@ func _on_buy_pressed():
     var item = itm.get_metadata(0)
     var player = get_tree().get_root().get_node("Game/Player")
     if player.cash >= item["cost"]:
-      if player.storage.has(item["id"]):
-        player.storage[item["id"]] += 1
-      else:
-        player.storage[item["id"]] = 1
+      player.add_item(item["id"], item, 1)
       player.cash -= item["cost"]
     else:
       pass

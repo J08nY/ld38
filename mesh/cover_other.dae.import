@@ -2,7 +2,7 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/cube.dae-8dcb9af004f5b3c1e6a0f8dcbd4194bf.scn"
+path="res://.import/cover_other.dae-8b301f851e2ca6e433d0ab11a96906d5.scn"
 
 [params]
 
@@ -14,7 +14,7 @@ materials/storage=0
 geometry/compress=true
 geometry/ensure_tangents=true
 geometry/storage=0
-animation/import=false
+animation/import=true
 animation/fps=15
 animation/filter_script=""
 animation/optimizer/enabled=true
