@@ -7,7 +7,7 @@ path="res://.import/combinator.dae-c2e42d69a734eec01b3e4caac3929cd7.scn"
 [params]
 
 nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_name="Combinator"
 nodes/custom_script=""
 materials/location=0
 materials/storage=0

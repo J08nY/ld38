@@ -49,10 +49,7 @@ func clear_all():
 
 func _on_add_pressed():
   var player = get_tree().get_root().get_node("Game/Player")
-  var storage = get_tree().get_root().get_node("Game/HUD/storage")
-  
-  print(player.storage)
-  print(storage.get_selected())
+  var storage = get_tree().get_root().get_node("Game/HUD/right/storage")
   
   var item = storage.get_selected()
   if item != null and player.has_item(item["id"]):
@@ -66,10 +63,8 @@ func _on_remove_pressed():
   var player = get_tree().get_root().get_node("Game/Player")
   var item = self.get_selected()
   if item != null:
-    print(item)
     var node = self.tree.get_selected()
     node.deselect(0)
-    print(node)
     var root = self.tree.get_root()
     root.remove_child(node)
     self.tree.update()

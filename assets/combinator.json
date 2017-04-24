@@ -1,7 +1,9 @@
 {
  "bases": [
-    "Great, you have succesfully created a new planet! It has a mass of /mass/, it is mainly /type/.",
-    "Your new creation is ready master! A planet was created as you commanded. /mass_comment/ /type_comment/"
+    "Great, you have succesfully created a new planet!\
+It has a mass of /mass/, it is mainly /type/.",
+    "Your new creation is ready master!\
+A planet was created as you commanded. /mass_comment/ /type_comment/"
  ],
  "mass_comment": {
     "very_small": "It's so tiny it's largest mountain almost covers it.",

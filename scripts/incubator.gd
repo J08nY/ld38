@@ -1,31 +1,39 @@
 extends Spatial
 
+const GrayMat = preload("res://gray_mat.tres")
+const IncubatorTemplate = preload("res://scripts/template_incubate.gd")
+
+var template
+
 var worlds = []
 var selected_pos = null
 var selected = null
 
-func _enter_tree():
-  for x in range(4):
-    var line = []
-    self.worlds.append(line)
-    for y in range(2):
-      line.append(null)
+var mat_selected = null
+var mat_unselected = null
 
-func set_world(x, y, world):
-  self.worlds[x][y] = world
-  var pos = get_node("spawns/" + str(x) + "-" + str(y))
+func _ready():
+  for x in range(4):
+    self.worlds.append(null)
+  self.mat_selected = GrayMat.duplicate(true)
+  self.mat_selected.set_albedo(Color(0.2, 0.2, 0.2))
+  self.mat_unselected = GrayMat.duplicate(true)
+  self.template = IncubatorTemplate.new()
+
+func set_world(i, world):
+  self.worlds[i] = world
+  var pos = get_node("spawns/" + str(i))
   world.set_translation(pos.global_transform.origin)
 
 func push_world(world):
   for x in range(4):
-    for y in range(2):
-      if self.worlds[x][y] == null:
-        set_world(x, y, world)
-        return true
+    if self.worlds[x] == null:
+      set_world(x, world)
+      return true
   return false
 
-func get_world(x, y):
-  return self.worlds[x][y]
+func get_world(x):
+  return self.worlds[x]
 
 func _on_body_input_event( camera, event, click_pos, click_normal, shape_idx ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
@@ -33,20 +41,39 @@ func _on_body_input_event( camera, event, click_pos, click_normal, shape_idx ):
     var cam = get_tree().get_root().get_camera()
     cam.select(self, get_node("point"))
 
-func _on_panel_input_event( camera, event, click_pos, click_normal, shape_idx ):
+func _on_right_input_event( camera, event, click_pos, click_normal, shape_idx ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
-    print("panel")
-    get_node("animation").play("click")
+    print("export")
     if self.selected_pos != null:
-      var w = get_world(self.selected_pos.x, self.selected_pos.y)
+      var w = get_world(self.selected_pos.x)
       if w != null:
-        print(w)
+        get_node("animation").play("right")
+    
+func _on_left_input_event( camera, event, click_pos, click_normal, shape_idx ):
+  if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
+    print("evolve")
+    if self.selected_pos != null:
+      var w = get_world(self.selected_pos.x)
+      if w != null:
+        get_node("animation").play("left")
+        w.evolve()
+        get_tree().get_root().get_node("Game/HUD").display_message(self.template.get_stage(w.life.stage)["text"])
+
 
 func _on_cylinder_input_event( camera, event, click_pos, click_normal, shape_idx, node, pos ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
-    print(node, pos, get_node(node))
-    self.selected = get_node(node)
-    self.selected_pos = pos
-    self.selected.material_override.set_albedo(Color(0.8,0.3,0.3))
+    print("pos ",pos)
+    var new = get_node(node)
+    if self.selected != null:
+      self.selected.set_material_override(self.mat_unselected)
+    
+    if self.selected == new:
+      self.selected.set_material_override(self.mat_unselected)
+      self.selected_pos = null
+      self.selected = null
+    else:
+      self.selected = new
+      self.selected_pos = pos
+      self.selected.set_material_override(self.mat_selected)
 
 

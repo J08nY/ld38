@@ -36,10 +36,8 @@ func get_item_count(id):
   return storage[id]
   
 func remove_item(id, amount):
-  print("remove", id, amount)
   if storage.has(id) and storage[id] >= amount:
     storage[id] -= amount
-    print("new amount", storage[id])
     _update_storage(id, storage[id])
 
 func _update_funds():

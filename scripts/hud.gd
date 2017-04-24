@@ -1,7 +1,8 @@
 extends Node
 
 func _ready():
-  pass
+  var view = get_tree().get_root().get_viewport()
+  view.connect("size_changed", self, "_on_size_changed", [view])
 
 func _on_ms_button_pressed():
   _toggle("ms")
@@ -21,24 +22,38 @@ func popup(which):
   for tab in tabs:
     var vis = false
     if tab == which:
-      vis = !get_node(tab).is_visible()
-    get_node(tab).set_visible(vis)
+      vis = !get_node("right/" + tab).is_visible()
+    get_node("right/" + tab).set_visible(vis)
   
 func set_funds(cash):
-  get_node("funds/cash").set_text(str(cash))
+  get_node("right/funds/cash").set_text(str(cash))
   
 func update_storage(id, amount):
-  get_node("storage").update_storage(id, amount)
+  get_node("right/storage").update_storage(id, amount)
   
 func display_message(message, time=5):
   get_node("messages").display_message(message, time)
 
-func _on_combibator_button_pressed():
-  var cam = get_tree().get_root().get_node("Game/Camera")
-  var combinator = get_tree().get_root().get_node("Game/Combinator")
-  cam.select(combinator, combinator.get_node("point"))
+func _select_machine(machine):
+  var cam = get_tree().get_root().get_camera()
+  var node = get_tree().get_root().get_node("Game/" + machine)
+  cam.select(node, node.get_node("point"))
+
+func _on_combinator_button_pressed():
+  self._select_machine("Combinator")
 
 func _on_incubator_button_pressed():
-  var cam = get_tree().get_root().get_node("Game/Camera")
-  var incubator = get_tree().get_root().get_node("Game/Incubator")
-  cam.select(incubator, incubator.get_node("point"))
+  self._select_machine("Incubator")
+  
+func _on_exporter_button_pressed():
+  self._select_machine("Exporter")
+
+func _on_size_changed(viewport):
+  var size = viewport.get_size()
+  var right = get_node("right")
+  right.set_position(Vector2(size.x, 0))
+  
+  var left_bottom = get_node("left_bottom")
+  left_bottom.set_position(Vector2(0, size.y))
+
+

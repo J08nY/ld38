@@ -42,19 +42,28 @@ func _on_body_input_event( camera, event, click_pos, click_normal, shape_idx ):
 
 func _on_panel_input_event( camera, event, click_pos, click_normal, shape_idx ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
-    print("panel")
-    get_node("animation").play("click")
-    var panel = get_node("Viewport/CombinatorPanel")
-    var ids = panel.get_ids()
-    var message = null
-    if ids != null and ids.size() > 0 and self.builder.can_combine(ids):
-      self.world = self.builder.combine(get_node("spawn").get_global_transform().origin, ids)
-      get_tree().get_root().get_node("Game").add_child(self.world)
-      panel.clear_all()
-      message = self.templater.template(self.world)
-    else:
-      message = "Cannot combine!"
+    print("combine")
+    var message = ""
+    if self.world == null:
+      var panel = get_node("Viewport/CombinatorPanel")
+      var ids = panel.get_ids()
+      if ids != null and ids.size() > 0 and self.builder.can_combine(ids):
+        self.world = self.builder.combine(get_node("spawn").get_global_transform().origin, ids)
+        get_tree().get_root().get_node("Game").add_child(self.world)
+        panel.clear_all()
+        message = self.templater.template(self.world)
+        get_node("animation").play("click")
+      else:
+        message = "Cannot combine!"
     get_tree().get_root().get_node("Game/HUD").display_message(message, 15)
-    
-    
-    
+
+func _on_incubate_input_event( camera, event, click_pos, click_normal, shape_idx ):
+  if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
+    print("incubate")
+    if self.world != null:
+      get_node("animation").play("incubate")
+      var incubator = get_tree().get_root().get_node("Game/Incubator")
+      incubator.push_world(self.world)
+      var cam = get_tree().get_root().get_node("Game/Camera")
+      cam.select(incubator, incubator.get_node("point"))
+      self.world = null

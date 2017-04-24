@@ -2,19 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/storage.png-2117570ae7865fe22d823222d213cbbd.stex"
+path.etc="res://.import/storage.png-2117570ae7865fe22d823222d213cbbd.etc.stex"
+path.s3tc="res://.import/storage.png-2117570ae7865fe22d823222d213cbbd.s3tc.stex"
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=0
 process/fix_alpha_border=true
 process/premult_alpha=true
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false

@@ -2,9 +2,9 @@
 
 [ext_resource path="res://scripts/hud.gd" type="Script" id=1]
 [ext_resource path="res://scripts/multiverse_shop.gd" type="Script" id=2]
-[ext_resource path="res://scripts/storage.gd" type="Script" id=3]
-[ext_resource path="res://scripts/howto.gd" type="Script" id=4]
-[ext_resource path="res://scripts/messages.gd" type="Script" id=5]
+[ext_resource path="res://scripts/messages.gd" type="Script" id=3]
+[ext_resource path="res://scripts/storage.gd" type="Script" id=4]
+[ext_resource path="res://scripts/howto.gd" type="Script" id=5]
 
 [node name="HUD" type="Node"]
 
@@ -28,6 +28,7 @@ flat = false
 
 [node name="ms" type="Control" parent="."]
 
+editor/display_folded = true
 visible = false
 margin_left = -615.0
 margin_right = -615.0
@@ -37,6 +38,7 @@ script = ExtResource( 2 )
 
 [node name="tabs" type="TabContainer" parent="ms"]
 
+editor/display_folded = true
 margin_left = 620.0
 margin_top = 31.0
 margin_right = 893.0
@@ -113,6 +115,7 @@ mouse_filter = 0
 
 [node name="panel" type="Panel" parent="ms"]
 
+editor/display_folded = true
 margin_left = 895.0
 margin_top = 55.0
 margin_right = 990.0
@@ -154,11 +157,29 @@ group = null
 text = "Buy"
 flat = false
 
-[node name="storage_button" type="Button" parent="."]
+[node name="messages" type="Control" parent="."]
 
-margin_left = 757.0
+margin_left = 380.0
+margin_top = 10.0
+margin_right = 745.0
+margin_bottom = 460.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 0
+script = ExtResource( 3 )
+
+[node name="right" type="Control" parent="."]
+
+margin_left = 1024.0
+margin_right = 1024.0
+rect_clip_content = false
+mouse_filter = 0
+
+[node name="storage_button" type="Button" parent="right"]
+
+margin_left = -267.0
 margin_top = 5.0
-margin_right = 816.0
+margin_right = -208.0
 margin_bottom = 30.0
 rect_clip_content = false
 mouse_filter = 0
@@ -169,24 +190,23 @@ group = null
 text = "Storage"
 flat = false
 
-[node name="storage" type="Control" parent="."]
+[node name="storage" type="Control" parent="right"]
 
-margin_left = 2.0
-margin_right = 2.0
+visible = false
 rect_clip_content = false
 mouse_filter = 0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
-[node name="panel" type="Panel" parent="storage"]
+[node name="panel" type="Panel" parent="right/storage"]
 
-margin_left = 755.0
+margin_left = -266.0
 margin_top = 56.0
-margin_right = 1018.0
+margin_right = -3.0
 margin_bottom = 460.0
 rect_clip_content = false
 mouse_filter = 0
 
-[node name="items" type="Tree" parent="storage/panel"]
+[node name="items" type="Tree" parent="right/storage/panel"]
 
 margin_left = 15.0
 margin_top = 10.0
@@ -194,16 +214,16 @@ margin_right = 252.0
 margin_bottom = 392.0
 mouse_filter = 0
 
-[node name="funds" type="PanelContainer" parent="."]
+[node name="funds" type="PanelContainer" parent="right"]
 
-margin_left = 817.0
+margin_left = -207.0
 margin_top = 3.0
-margin_right = 948.0
+margin_right = -76.0
 margin_bottom = 32.0
 rect_clip_content = false
 mouse_filter = 0
 
-[node name="label" type="Label" parent="funds"]
+[node name="label" type="Label" parent="right/funds"]
 
 margin_left = 7.0
 margin_top = 7.0
@@ -218,7 +238,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="cash" type="Label" parent="funds"]
+[node name="cash" type="Label" parent="right/funds"]
 
 margin_left = 65.0
 margin_top = 7.0
@@ -232,11 +252,11 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="help_button" type="Button" parent="."]
+[node name="help_button" type="Button" parent="right"]
 
-margin_left = 951.0
+margin_left = -73.0
 margin_top = 5.0
-margin_right = 1020.0
+margin_right = -4.0
 margin_bottom = 30.0
 rect_clip_content = false
 mouse_filter = 0
@@ -247,24 +267,23 @@ group = null
 text = "HowTo"
 flat = false
 
-[node name="help" type="Control" parent="."]
+[node name="help" type="Control" parent="right"]
 
-margin_left = 2.0
-margin_right = 2.0
+visible = false
 rect_clip_content = false
 mouse_filter = 0
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
-[node name="panel" type="Panel" parent="help"]
+[node name="panel" type="Panel" parent="right/help"]
 
-margin_left = 756.0
+margin_left = -266.0
 margin_top = 56.0
-margin_right = 1018.0
+margin_right = -4.0
 margin_bottom = 460.0
 rect_clip_content = false
 mouse_filter = 0
 
-[node name="text" type="RichTextLabel" parent="help/panel"]
+[node name="text" type="RichTextLabel" parent="right/help/panel"]
 
 margin_left = 7.0
 margin_top = 8.0
@@ -275,23 +294,19 @@ bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
 
-[node name="messages" type="Control" parent="."]
+[node name="left_bottom" type="Control" parent="."]
 
-margin_left = 380.0
-margin_top = 10.0
-margin_right = 745.0
-margin_bottom = 460.0
+margin_top = 600.0
+margin_bottom = 600.0
 rect_clip_content = false
-mouse_filter = 2
-size_flags_vertical = 0
-script = ExtResource( 5 )
+mouse_filter = 0
 
-[node name="combibator_button" type="Button" parent="."]
+[node name="combinator_button" type="Button" parent="left_bottom"]
 
-margin_left = 5.0
-margin_top = 575.0
-margin_right = 91.0
-margin_bottom = 595.0
+margin_left = 10.0
+margin_top = -30.0
+margin_right = 96.0
+margin_bottom = -10.0
 rect_clip_content = false
 mouse_filter = 0
 toggle_mode = false
@@ -301,12 +316,12 @@ group = null
 text = "Combinator"
 flat = false
 
-[node name="incubator_button" type="Button" parent="."]
+[node name="incubator_button" type="Button" parent="left_bottom"]
 
-margin_left = 95.0
-margin_top = 575.0
-margin_right = 168.0
-margin_bottom = 595.0
+margin_left = 100.0
+margin_top = -30.0
+margin_right = 173.0
+margin_bottom = -10.0
 rect_clip_content = false
 mouse_filter = 0
 toggle_mode = false
@@ -316,16 +331,33 @@ group = null
 text = "Incubator"
 flat = false
 
+[node name="exporter_button" type="Button" parent="left_bottom"]
+
+margin_left = 177.0
+margin_top = -30.0
+margin_right = 242.0
+margin_bottom = -10.0
+rect_clip_content = false
+mouse_filter = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Exporter"
+flat = false
+
 [connection signal="pressed" from="ms_button" to="." method="_on_ms_button_pressed"]
 
 [connection signal="pressed" from="ms/panel/buy" to="ms" method="_on_buy_pressed"]
 
-[connection signal="pressed" from="storage_button" to="." method="_on_storage_button_pressed"]
+[connection signal="pressed" from="right/storage_button" to="." method="_on_storage_button_pressed"]
 
-[connection signal="pressed" from="help_button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="right/help_button" to="." method="_on_help_button_pressed"]
 
-[connection signal="pressed" from="combibator_button" to="." method="_on_combibator_button_pressed"]
+[connection signal="pressed" from="left_bottom/combinator_button" to="." method="_on_combinator_button_pressed"]
 
-[connection signal="pressed" from="incubator_button" to="." method="_on_incubator_button_pressed"]
+[connection signal="pressed" from="left_bottom/incubator_button" to="." method="_on_incubator_button_pressed"]
+
+[connection signal="pressed" from="left_bottom/exporter_button" to="." method="_on_exporter_button_pressed"]
 
 

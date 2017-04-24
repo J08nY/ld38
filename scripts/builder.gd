@@ -32,7 +32,7 @@ func combine(where, materials):
   var color = Color(0.3,0.3,0.3)
   var gas_mass = 0
   var gas_volume = 0
-  var gas_color = Color(0.5,0.5,0.6,0.35)
+  var gas_color = Color(0.5,0.5,0.6,0.4)
   
   for mat in materials:
     var item = self.items.get(mat)

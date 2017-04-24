@@ -14,6 +14,5 @@ multithread/thread_rid_pool_prealloc=60
 viewport/default_clear_color=Color( 0, 0, 0, 1 )
 quality/msaa=1
 quality/hdr=false
-threads/thread_model=2
 quality/anisotropic_filter_level=2.0
 reflections/high_quality_vct_gi=false
