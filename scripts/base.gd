@@ -1,17 +1,15 @@
 extends Node
 
-var Game = preload("res://base.tscn")
-var Wrld = preload("res://world.tscn")
-var Incubator = preload("res://incubator.tscn")
+const Wrld = preload("res://world.tscn")
+const Builder = preload("res://scripts/builder.gd")
 
 var cam = null
+var builder = null
 
 func _ready():
   randomize()
   self.cam = get_node("Camera")
-
-func _process(delta):
-  pass
+  self.builder = Builder.new()
     
 func _input(event):
   if event.type == InputEvent.MOUSE_BUTTON:
@@ -42,7 +40,8 @@ func _input(event):
         if s != null:
           get_node("Incubator").push_world(s)
       if event.scancode == KEY_N:
-        var w = Wrld.instance()
+        #var w = Wrld.instance()
+        var w = self.builder.combine(Vector3(0,0,0), [])
         w.set_scale(Vector3(0.02, 0.02, 0.02))
         add_child(w)
         get_node("Incubator").push_world(w)

@@ -1,7 +1,7 @@
 config_version=3
 [application]
 
-name="World Factory^TM"
+name="World Factory"
 main_scene="res://base.tscn"
 icon="res://icon.png"
 
@@ -13,5 +13,7 @@ multithread/thread_rid_pool_prealloc=60
 
 viewport/default_clear_color=Color( 0, 0, 0, 1 )
 quality/msaa=1
-gles3/shadow_filter_mode=2
 quality/hdr=false
+threads/thread_model=2
+quality/anisotropic_filter_level=2.0
+reflections/high_quality_vct_gi=false

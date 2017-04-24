@@ -1,35 +1,103 @@
 {
-    "1": [
+    "solid": [
         {"id": "low_planet_mat",
          "name": "Low-grade planetary material",
          "desc": "Buying this, you basically get bread crumbs from other recycled worlds.",
-         "cost": 10},
+         "cost": 10,
+         "mass": 0.2,
+         "color": "#222034"},
         {"id": "mid_planet_mat",
          "name": "Middle-grade planetary material",
          "desc": "While still recycled, it's previous owners didn't filter out all the good stuff.",
-         "cost": 30},
+         "cost": 30,
+         "mass": 0.3,
+         "color": "#181910"},
         {"id": "high_planet_mat",
          "name": "High-grade planetary material",
          "desc": "Made from worlds demolished to make way for a new hyperspatial express drive.",
-         "cost": 50},
+         "cost": 50,
+         "mass": 0.4,
+         "color": "#151731"},
         {"id": "top_planet_mat",
          "name": "Pristine planetary material",
          "desc": "Pretty much the only source of such high-quality planetary material comes from the underground. ",
-         "cost": 100},
+         "cost": 100,
+         "mass": 0.5,
+         "color": "#321521"},
+        {"id": "high_rad_mat",
+         "name": "Ionizing planetary material",
+         "desc": "",
+         "cost": 140,
+         "mass": 0.4,
+         "color": "#99e550"},
         {"id": "low_inter_dust",
          "name": "Low-grade interplanetary dust",
          "desc": "Scraped of the bottom of some junkyard universe megaship, this really doesn't have much to offer.",
-         "cost": 20},
+         "cost": 20,
+         "mass":0.3,
+         "color": "#323c39"},
         {"id": "middle_inter_dust",
          "name": "Middle-grade interplanetary dust",
          "desc": "",
-         "cost": 40},
+         "cost": 40,
+         "mass":0.4,
+         "color": "#3c3031"},
         {"id": "high_inter_dust",
          "name": "High-grade interplanetary dust",
-         "desc": "Collected after a supernova, it contains many diverse elements.",
-         "cost": 80}
+         "desc": "Collected after a supernova, it contains many diverse solid and gaseous elements.",
+         "cost": 80,
+         "mass":0.5,
+         "color": "#453832"}
     ],
-    "2": [
+    "gas": [
+        {"id": "hydrogen",
+         "name": "Hydrogen",
+         "desc": "The most abundant element across the multi-verse, you can get it cheap.",
+         "cost": 5,
+         "mass": 0.1,
+         "volume": 1,
+         "color": "#202030"},
+        {"id": "helium",
+         "name": "Helium",
+         "desc": "",
+         "cost": 10,
+         "mass": 0.1,
+         "volume": 1,
+         "color": "#202030"},
+        {"id": "alpha_chlerixum",
+         "name": "Alpha Chlerixum",
+         "desc": "",
+         "cost": 15,
+         "mass": 0.1,
+         "volume": 1,
+         "color": "#451917"},
+        {"id": "bllenerium",
+         "name": "Bllenerium",
+         "desc": "Extremely dense for a gas, in some universes it will definitely be considered a liquid.",
+         "cost": 20,
+         "mass": 0.5,
+         "volume": 1,
+         "color": "#101557"},
+         {"id": "kataraxen",
+          "name": "Kataraxen",
+          "desc": "",
+          "cost": 25,
+         "mass": 0.1,
+         "volume": 1,
+         "color": "#075721"},
+         {"id": "mystery_balloon",
+          "name": "Mystery balloon",
+          "desc": "It's just a small balloon, yet it is supposed to contain enough gases to fill out a whole planet's atmosphere?",
+          "cost": 30,
+         "mass": 0.1,
+         "volume": 1,
+         "color": "#152030"}
+    ],
+    "precursor": [
+        {"id": "space_junk",
+         "name": "Space junk",
+          "desc": "",
+          "cost": 50},
         {"id": "unknown_molecules",
          "name": "Unknown molecules",
          "desc": "The packaging looks leaky and the guarantee signs are all weird but you might take it for the price.",
@@ -51,10 +119,10 @@
          "desc": "",
          "cost": 500}
     ],
-    "3": [
+    "life": [
         {"id": "chon_life_1",
          "name": "CHON based life (level 1)",
-         "desc": "",
+         "desc": "The most common life forms among the multi-verse are CHON based, so you can get them in bulk.",
          "cost": 1000},
         {"id": "chon_life_2",
          "name": "CHON based life (level 2)",
@@ -64,17 +132,32 @@
          "name": "Grey goo",
          "desc": "No one really told you what it is, they just sell it.",
          "cost": 2000},
+        {"id": "plumbus",
+         "name": "Plumbus",
+         "desc": "Everyone has a plumbus in their home.\
+First they take the dingle bop and they smooth it out with a bunch of schleem.\
+The schleem is then repurposed for later batches.\
+They take the dingle bop and they push it through the grumbo, where the fleeb is rubbed against it.\
+It's important that the fleeb is rubbed, becasue the fleeb has all the fleeb juice.\
+Then, a schlami shows up, and he rubs it and spits on it.\
+They cut the fleeb. There's several hizzards in the way.\
+The blamfs rub against the chumbles, and the plubis, and grumbo are shaved away.\
+That leaves you with a regular old plumbus.",
+         "cost": 2500},
         {"id": "cardboard_box",
          "name": "A cardboard box",
          "desc": "You might have heard some cat noises from the inside, although you can't be sure unless you open it.",
-         "cost": 3000}
-    ],
-    "other": [
-        {"id": "planets_howto",
-         "name": "How it's Made: Planets",
-         "desc": "The ultimate guide for any beginner but also experienced planet builder!\
-                      Covers all the bases, even the orthonormal ones.",
-         "cost": 5}
+         "cost": 3000},
+         {"id": "stage_trees",
+          "name": "A forest of weird trees",
+          "desc": "They seem oddly rocket shaped. They even have the inter-civilized safety markings.",
+          "cost": 3000},
+        {"id": "spaghetti_monster",
+         "name": "A flying spaghetti monster",
+          "desc": "Hovering with barely audible noises of slurping sauce you are not even sure how it's legal to trade such a creature.",
+          "cost": 3500}
     ]
 }
  
+
+

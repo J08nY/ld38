@@ -1,11 +1,20 @@
 extends Spatial
 
+const Builder = preload("res://scripts/builder.gd")
+const CombinatorTemplate = preload("res://scripts/template_combine.gd")
+
 var prev_pos = null
 var panel = null
+var world = null
+
+var templater = null
+var builder = null
 
 func _ready():
   get_node("Area/Quad").get_material_override().set_texture(SpatialMaterial.DIFFUSE_LAMBERT, get_node("Viewport").get_texture())
   self.panel = get_node("Viewport/CombinatorPanel")
+  self.templater = CombinatorTemplate.new()
+  self.builder = Builder.new()
   set_process_input(true)
 
 func _on_Area_input_event( camera, event, click_pos, click_normal, shape_idx ):
@@ -35,5 +44,17 @@ func _on_panel_input_event( camera, event, click_pos, click_normal, shape_idx ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():
     print("panel")
     get_node("animation").play("click")
+    var panel = get_node("Viewport/CombinatorPanel")
+    var ids = panel.get_ids()
+    var message = null
+    if ids != null and ids.size() > 0 and self.builder.can_combine(ids):
+      self.world = self.builder.combine(get_node("spawn").get_global_transform().origin, ids)
+      get_tree().get_root().get_node("Game").add_child(self.world)
+      panel.clear_all()
+      message = self.templater.template(self.world)
+    else:
+      message = "Cannot combine!"
+    get_tree().get_root().get_node("Game/HUD").display_message(message, 15)
+    
     
     

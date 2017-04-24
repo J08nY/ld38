@@ -1,6 +1,4 @@
-[gd_resource type="SpatialMaterial" load_steps=2 format=2]
-
-[ext_resource path="res://assets/gray_tex.png" type="Texture" id=1]
+[gd_resource type="SpatialMaterial" format=2]
 
 [resource]
 
@@ -19,8 +17,7 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
-albedo_color = Color( 0.507812, 0.474091, 0.474091, 1 )
-albedo_texture = ExtResource( 1 )
+albedo_color = Color( 0.519531, 0.485031, 0.485031, 1 )
 specular_mode = 0
 specular_color = Color( 0.0736863, 0, 0.0736863, 1 )
 specular_metalness = 0.1

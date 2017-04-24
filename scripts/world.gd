@@ -1,23 +1,41 @@
 extends Spatial
 
-const SIZE = 15
+export var SIZE = 15
 
-var Cube = preload("res://mesh/cube.obj")
-var House = preload("res://house.tscn")
-var Pine = preload("res://tree_pine.tscn")
-var Oak = preload("res://tree_oak.tscn")
+const Cube = preload("res://mesh/cube.obj")
+const GrayMat = preload("res://gray_mat.tres")
+const GlassMat = preload("res://glass.tres")
+const House = preload("res://house.tscn")
+const Pine = preload("res://tree_pine.tscn")
+const Oak = preload("res://tree_oak.tscn")
+
+var materials
+
+var mass
+var volume
+var color
+var gas_mass
+var gas_volume
+var gas_color
+
+var material
+var glass_material
+
 
 func _enter_tree():
-  var pn = Pine.instance()
-  pn.translate(Vector3(2,1,2))
-  add_child(pn)
-  var ok = Oak.instance()
-  ok.translate(Vector3(-2,1,2))
-  add_child(ok)
-  var hs = House.instance()
-  hs.translate(Vector3(0,1,2))
-  hs.rotate_y(PI/2)
-  add_child(hs)
+  pass
+#  var pn = Pine.instance()
+#  pn.translate(Vector3(2,1,2))
+#  add_child(pn)
+#  var ok = Oak.instance()
+#  ok.translate(Vector3(-2,1,2))
+#  add_child(ok)
+#  var hs = House.instance()
+#  hs.translate(Vector3(0,1,2))
+#  hs.rotate_y(PI/2)
+#  add_child(hs)
+
+func build():
   _make_ball(SIZE, Vector3(0,0,0))
 
 func _make_ball(size, center):
@@ -37,8 +55,19 @@ func _make_ball(size, center):
           count += 1
         else:
           line_y.append(null)
+
+          
+  self.material = GrayMat.duplicate(true)
+  self.material.set_albedo(self.color)
+  self.glass_material = GlassMat.duplicate(true)
+  self.glass_material.set_albedo(self.gas_color)
+  get_node("CoverOther/Icosphere").set_material_override(self.glass_material)
+  
+  for i in range(Cube.get_surface_count()):
+    Cube.surface_set_material(i, self.material)
   var multi = MultiMesh.new()
   multi.set_transform_format(MultiMesh.TRANSFORM_3D)
+  multi.set_color_format(MultiMesh.COLOR_FLOAT)
   multi.set_mesh(Cube)
   multi.set_instance_count(count)
   var i = 0
@@ -56,6 +85,7 @@ func _make_ball(size, center):
           var trans = Transform()
           trans = trans.translated(pos)
           multi.set_instance_transform(i, trans)
+          multi.set_instance_color(i, self.color)
           i += 1
   var instance = MultiMeshInstance.new()
   instance.set_multimesh(multi)
