@@ -54,7 +54,7 @@ func _on_panel_input_event( camera, event, click_pos, click_normal, shape_idx ):
         message = self.templater.template(self.world)
         get_node("animation").play("click")
       else:
-        message = "Cannot combine!"
+        message = "Cannot combine! You need solid and gaseous material."
     get_tree().get_root().get_node("Game/HUD").display_message(message, 15)
 
 func _on_incubate_input_event( camera, event, click_pos, click_normal, shape_idx ):

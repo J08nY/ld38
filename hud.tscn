@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/hud.gd" type="Script" id=1]
 [ext_resource path="res://scripts/multiverse_shop.gd" type="Script" id=2]
 [ext_resource path="res://scripts/messages.gd" type="Script" id=3]
 [ext_resource path="res://scripts/storage.gd" type="Script" id=4]
 [ext_resource path="res://scripts/howto.gd" type="Script" id=5]
+[ext_resource path="res://scripts/popup.gd" type="Script" id=6]
 
 [node name="HUD" type="Node"]
 
@@ -159,7 +160,7 @@ flat = false
 
 [node name="messages" type="Control" parent="."]
 
-margin_left = 380.0
+margin_left = 150.0
 margin_top = 10.0
 margin_right = 745.0
 margin_bottom = 460.0
@@ -346,6 +347,64 @@ group = null
 text = "Exporter"
 flat = false
 
+[node name="popup" type="PopupPanel" parent="."]
+
+visible = false
+margin_left = 210.0
+margin_top = 60.0
+margin_right = 680.0
+margin_bottom = 240.0
+rect_clip_content = false
+mouse_filter = 0
+popup_exclusive = false
+script = ExtResource( 6 )
+
+[node name="text" type="RichTextLabel" parent="popup"]
+
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 460.0
+margin_bottom = 130.0
+mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+
+[node name="options" type="OptionButton" parent="popup"]
+
+margin_left = 10.0
+margin_top = 150.0
+margin_right = 399.0
+margin_bottom = 170.0
+rect_clip_content = false
+mouse_filter = 0
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+selected = -1
+items = [  ]
+
+[node name="ok" type="Button" parent="popup"]
+
+margin_left = 410.0
+margin_top = 150.0
+margin_right = 462.0
+margin_bottom = 170.0
+rect_clip_content = false
+mouse_filter = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "OK"
+flat = false
+
 [connection signal="pressed" from="ms_button" to="." method="_on_ms_button_pressed"]
 
 [connection signal="pressed" from="ms/panel/buy" to="ms" method="_on_buy_pressed"]
@@ -359,5 +418,7 @@ flat = false
 [connection signal="pressed" from="left_bottom/incubator_button" to="." method="_on_incubator_button_pressed"]
 
 [connection signal="pressed" from="left_bottom/exporter_button" to="." method="_on_exporter_button_pressed"]
+
+[connection signal="pressed" from="popup/ok" to="popup" method="_on_ok_pressed"]
 
 

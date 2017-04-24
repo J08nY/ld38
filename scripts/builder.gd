@@ -33,13 +33,14 @@ func combine(where, materials):
   var gas_mass = 0
   var gas_volume = 0
   var gas_color = Color(0.5,0.5,0.6,0.4)
+  var cost = 0
   
   for mat in materials:
     var item = self.items.get(mat)
     var category = self.items.category(mat)
     if category == "solid":
       mass += item.data["mass"]
-      #volume += item.data["volume"]
+      volume += item.data["volume"]
       var s = item.data["color"]
       color = color.blend(Color(s))
 
@@ -48,6 +49,7 @@ func combine(where, materials):
       gas_volume += item.data["volume"]
       var s = item.data["color"]
       gas_color = gas_color.blend(Color(s))
+    cost += item.data["cost"]
   
   w.materials = materials
   w.mass = mass
@@ -56,5 +58,8 @@ func combine(where, materials):
   w.gas_mass = gas_mass
   w.gas_volume = gas_volume
   w.gas_color = gas_color
+  w.total_mass = mass + gas_mass
+  w.total_volume = volume + gas_volume
+  w.cost = cost
   w.call_deferred("build")
   return w

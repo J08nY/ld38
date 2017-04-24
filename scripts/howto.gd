@@ -11,5 +11,11 @@ func _ready():
   var data = parse_json(content)
   self.title = data["title"]
   self.text = data["text"]
-  get_node("panel/text").set_bbcode("[b]" + self.title + "[/b]\n\n" + self.text)
+  var label = get_node("panel/text")
+  label.set_bbcode("[b]" + self.title + "[/b]\n\n" + self.text)
+  label.push_list(RichTextLabel.LIST_DOTS)
+  for life in data["list"]:
+    label.append_bbcode(life)
+    label.newline()
+  
   #get_node("panel/text").add_text(self.text)

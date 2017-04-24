@@ -19,6 +19,11 @@ var gas_mass
 var gas_volume
 var gas_color
 
+var total_mass
+var total_volume
+
+var cost
+
 var surface_color
 
 var mesh
@@ -58,11 +63,8 @@ func build():
   self.level = 1
   self.surface = _make_surface(SIZE, Vector3(0,0,0), self.level)
   
-  var types = [House, Pine, Oak]
-  for i in range(15):
-    var type = types[randi() % 3]
-    add_obj(type, int(rand_range(-SIZE/2, SIZE/2)), int(rand_range(-SIZE/2, SIZE/2)))
   self.life = Life.new(0, self.materials)
+  add_child(self.life)
 
 func _make_ball(size, center):
   self.blocks = []

@@ -40,7 +40,6 @@ func _input(event):
         if s != null:
           get_node("Incubator").push_world(s)
       if event.scancode == KEY_N:
-        #var w = Wrld.instance()
         var w = self.builder.combine(Vector3(0,0,0), [])
         w.set_scale(Vector3(0.02, 0.02, 0.02))
         add_child(w)

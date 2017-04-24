@@ -1,0 +1,187 @@
+{
+   "choice":[
+      {
+         "id":"tribe_war",
+         "text":"A war between two tribes broke out.",
+         "options":[
+            "Annihilate the first tribe.",
+            "Annihilate the second tribe.",
+            "Destroy both tribes.",
+            "Create a mountain barrier between them."
+         ],
+         "correct":[
+            "You made the ground tremble, mountains fall, lightnings strike and soon there was no war.",
+            "",
+            "None of these tribes were on their way to intelligent life anyway, am I right?",
+            "The tribes went on with their pre-societal life and soon forgotten about the war."
+         ],
+         "incorrect":[
+            "The other tribe quickly advanced to being a society, of slave and torture that is. Thankfully, it destroyed itself quickly.",
+            "Although you killed a whole tribe, it was the wrong one. The first tribe died out naturally.",
+            "These were the only two tribes on this planet on their way to intelligent life. You killed them.",
+            "The mountain barrier was great for peace, although it's effects on the ecosystem killed of both promising tribes."
+         ],
+         "stages":[
+            3
+         ]
+      },
+      {
+         "id":"alien_incursion",
+         "text":"An alien civilisation came upon your planet.",
+         "options":[
+            "optA",
+            "optB"
+         ],
+         "correct":[
+            "yes A",
+            "yes B"
+         ],
+         "incorrect":[
+            "no A",
+            "no B"
+         ],
+         "stages":[
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+         ]
+      },
+      {
+         "id":"ice_age",
+         "text":"An ice age kicks in, a deadly threat to your primitive beings.",
+         "options":[
+            "Invent fire and warm them up.",
+            "Invent igloos.",
+            "Invent clothes",
+            "Do nothing, they will figure it out."
+         ],
+         "correct":[
+            "Great idea! Not only you saved your planet, you also helped evolution.",
+            "Igloo hmmm good choice, they survived the long winter succesfully.",
+            "Clothes! Not the best choice but it sure kept them alive during the disaster.",
+            "Actually a great choice, your organisms have been forced to evolve and no longer do they feel cold."
+         ],
+         "incorrect":[
+            "You can´t just invent fire. What did you think? All your primitive organisms burned in a crazy brutal war.",
+            "Turns out, you didn´t have the right kind of liquid to create snow on your planet, all the poisonous gases released in the igloos destroyed your creatures.",
+            "Clothing required leather and fur from other creatures which led to genocide.",
+            "They froze to death."
+         ],
+         "stages":[
+            3,
+            4,
+            5
+         ]
+      },
+      {
+         "id":"quantum_fluct",
+         "text":"Quantum fluctuations turned the cells on your planet into planets and your planet into a cell.",
+         "options":[
+            "Choose a new planet, from the cell-transformed ones.",
+            "Try to reverse the process and get your planet back."
+         ],
+         "correct":[
+            "After choosing a particular planet, it seems that all others dissappeared. Nevermind, you got your planet.",
+            "The forces at play didn't like your experiment, but in the end you made it. Your planet has a few holes in it though."
+         ],
+         "incorrect":[
+            "Your new planet seems just like the old one, with one minor detail, all atoms look like cells and all cells look like atoms.",
+            "Ooops, a white-black hole appeared."
+         ],
+         "stages":[
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+         ]
+      },
+      {
+         "id":"sentient_cell",
+         "text":"One cell of a new multi-cell species just became sentient, out of the blue, really.",
+         "options":[
+            "Kill it!",
+            "Let it be."
+         ],
+         "correct":[
+            "A wise choice, other organisms prosper.",
+            "One of it's first thoughts went to it splitting and then creating a diverse fauna and flora on your planet."
+         ],
+         "incorrect":[
+            "What could you expect from such an anomally? It made quick work of all of your planet's other organisms.",
+            "As fast as it developed sentience, it has realized that life on it's planet is meaningless (remember that you forgot to add meaning!) and just dissolved."
+         ],
+         "stages":[
+            3
+         ]
+      },
+      {
+         "id":"relativity",
+         "text":"The space and time of your planet stopped being relative. An absolute reference frame appears!",
+         "options":[
+            "Fix it!",
+            "Let it be."
+         ],
+         "correct":[
+            "It's super effective. Relativity is back.",
+            "Your planet seems just fine the way it is."
+         ],
+         "incorrect":[
+            "It seems your powers aren't as strong as you expected. It doesn't quite work out and you end up with time and space all jumbled up. This, wibbily wobbly timey wimey stuff..",
+            "Why would you bother keeping the fundamental laws of the Multiverse sane?"
+         ],
+         "stages":[
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+         ]
+      },
+      {
+         "id":"emotions",
+         "text":"Somebody fell in love and got angry, when the other person did't love them back. Oops emotions discovered.",
+         "options": [
+            "Kill them both, don't let those emotions spread.",
+            "Let them evolve."
+         ],
+         "correct": [
+            "Good choice, emotions won't longer appear on your planet and you can prosper without any drama.",
+            "Your species learned how to love and now they reproduce faster then ever."
+         ],
+         "incorrect": [
+            "What did you think? Now you have a planet full of cybermen, they will proceed to delete emotion from the whole Multiverse if let loose. Half of them die in a war.",
+            "Well now there are wars and love triangles, all kinds of psychology and philosophy, your species will spend lots of years just figuring themselves out. They won't even care about the rest of the world. No spaceships, no telescopes, no interaction."
+         ],
+         "stages": [
+            5,6
+         ]
+      },
+      {
+         "id":"tectonic",
+         "text":"The tectonic plates of your planet are having a tec-tonic tec-hno par-ty.",
+         "options": [
+            "Merge them all into one, to stop it.",
+            "Disconnect the speakers.",
+            ""
+         ],
+         "correct": [
+            "",
+            ""
+         ],
+         "incorrect": [
+            "",
+            ""
+         ],
+         "stages": [
+            0,1,2,3,4,5,6
+         ]
+      }
+   ]
+}

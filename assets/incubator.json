@@ -1,47 +1,62 @@
 {
    "bases":[
-      ""
+      "Your planet has /stage/."
    ],
    "misc":{
-      "schrodinger":[
+      "cardboard_box":[
          "Life on this planet possesses a weird property, even by Multiverse standards. It seems to be in a state between existing and not existing.",
-         "Cardboard boxes are a common occurence on this planet, everything seems to have them on. Oh god, even the molecules are in cardboard boxes!",
-         ""
+         "Cardboard boxes are a common occurence on this planet, everything seems to have them on. Oh god, even the molecules are in cardboard boxes!"
       ],
-      "trees":[
+      "stage_trees":[
          "This planet is covered in trees full of solid rocket fuel. They grow to maturity, producing solid fuel in their trunks. When mature, they shed their branches apart from a few top, seed-bearing, ones and lift off, to seek another planet.",
          "The smell of rocket fuel is very strong at the surface of the planet. It feels like it's evaporating from the trees.",
+      ],
+      "plumbus":[
+         "Everybody has a Plumbus at their home, so there is really no point explaining it's usage.",
+         "This planet looks like the home planet of the Plumbii origin species."
+      ],
+      "grey_goo":[
+         "Everythin is quite, what's the word, gooey?"
+      ],
+      "spaghetti_monster":[
          ""
       ]
    },
-   "stages":[
+   "stage":[
       {
          "id":"none",
-         "text":"No life!"
+         "name": "no life",
+         "text":""
       },
       {
          "id":"basic",
-         "text":"Basic life."
+         "name":"basic life",
+         "text":""
       },
       {
          "id":"diverse",
-         "text":"Diverse life."
+         "name":"diverse life",
+         "text":""
       },
       {
          "id":"multi-cell",
-         "text":"Multi cell life."
+         "name":"multi cell life",
+         "text":""
       },
       {
          "id":"group",
-         "text":"Groups!"
+         "name":"life in tribes",
+         "text":""
       },
       {
          "id":"societal",
-         "text":"Societal life!"
+         "name":"societies",
+         "text":""
       },
       {
          "id":"civilisation",
-         "text":"Civilisation!"
+         "name":"civilisation",
+         "text":""
       }
    ]
 }

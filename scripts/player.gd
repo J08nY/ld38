@@ -3,10 +3,10 @@ extends Node
 const Items = preload("res://scripts/items.gd")
 var items
 
-var cash = 1000 setget set_cash, get_cash
+var cash = 100 setget set_cash, get_cash
 var storage = {}
 var inventory = {}
-
+  
 func _ready():
   self.items = Items.new()
   _update_funds()

@@ -26,13 +26,14 @@ func _process(delta):
   for i in to_remove:
     var label = labels[i]
     remove_child(label)
-    label.queue_free()
     labels.remove(i)
     runs.remove(i)
     lengths.remove(i)
     count -= 1
 
 func display_message(message, time):
+  if message == null:
+    return
   var label = Label.new()
   label.set_text(message)
   add_child(label)

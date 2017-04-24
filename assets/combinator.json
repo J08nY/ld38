@@ -3,20 +3,23 @@
     "Great, you have succesfully created a new planet!\
 It has a mass of /mass/, it is mainly /type/.",
     "Your new creation is ready master!\
-A planet was created as you commanded. /mass_comment/ /type_comment/"
+A planet was created as you commanded.\
+/mass_comment/\
+/type_comment/",
+    "The materials combined and created a /type/ planet, with a mass of /mass/."
  ],
  "mass_comment": {
     "very_small": "It's so tiny it's largest mountain almost covers it.",
     "small": "A rather small planet.",
-    "medium": "",
-    "big": "",
-    "huge": "",
+    "medium": "Medium sized.",
+    "big": "A very large planet.",
+    "huge": "It's quiet huge!",
     "yuge": "It is so YUGE! Something else must be small... Look at those hands. Are they small hands? And he referred to my hands, if they are small, something else must be small."
  },
  "type_comment": {
     "solid": "It is clearly solid, with a metallic core.",
     "rock": "A rocky planet, like this one shouldn't get lost anywhere.",
     "icy": "Consists largely of ice, which being a solid form of water, gives good chances to CHON based life forms.",
-    "gaseous": "Gaseous."
+    "gaseous": "It is gaseous."
  }
 }

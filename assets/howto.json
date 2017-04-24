@@ -5,6 +5,20 @@ Covers all the bases, even the orthonormal ones.\
 \
 You definitely need some solid base, to create the planet's core, mantle and crust. If you want to have a chance at creating life, gaseous elements for your planet's atmosphere are a must have! You could also try to create a gaseous planet, or anything else really, if spaghetti monsters are your thing.\
 \
-Buy resources from the Multiverse shop, they have everything you will need to make a planet. Usually sold in batches of sextillion tons.
-"
+Buy resources from the Multiverse shop, they have everything you will need to make a planet. Usually sold in batches of sextillion tons.\
+\
+After combining your planet in the Combinator, go to the Incubator and evolve your planet/s. Some challenges may face you there, as not every step in planet's evolution is in the right direction. Evolving life in highest possible form is what will satisfy your customers.\
+\
+Then move your planet to the Exporter for potential buyers.\
+\
+The more advanced life you evolve on your planets the more you get for them.\
+",
+    "list": [
+    "Basic life = 1",
+    "Multi cell life = 2",
+    "Diverse life = 3",
+    "Tribal life = 4",
+    "Societial life = 5",
+    "Civilisation = 6"
+    ]
 }
