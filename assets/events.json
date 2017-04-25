@@ -29,19 +29,18 @@
          "id":"alien_incursion",
          "text":"An alien civilisation came upon your planet.",
          "options":[
-            "optA",
-            "optB"
+            "Hide the existence of the incursion.",
+            "Let it be."
          ],
          "correct":[
-            "yes A",
-            "yes B"
+            "The aliens seem as uninterested in your planet as it's inhabitants of the aliens, now that you have hidden them.",
+            "The aliens find common understanding with inhabitants of your planet. Your planet prospers."
          ],
          "incorrect":[
-            "no A",
-            "no B"
+            "Unbeknownst to you, the aliens emit radiation deadly to your planet's lifeforms.",
+            "The aliens quickly destroy all the major life forms on your planet."
          ],
          "stages":[
-            0,
             1,
             2,
             3,
@@ -147,40 +146,98 @@
       {
          "id":"emotions",
          "text":"Somebody fell in love and got angry, when the other person did't love them back. Oops emotions discovered.",
-         "options": [
+         "options":[
             "Kill them both, don't let those emotions spread.",
             "Let them evolve."
          ],
-         "correct": [
-            "Good choice, emotions won't longer appear on your planet and you can prosper without any drama.",
+         "correct":[
+            "Good choice, emotions won't longer appear on your planet and it can prosper without any kind of drama.",
             "Your species learned how to love and now they reproduce faster then ever."
          ],
-         "incorrect": [
+         "incorrect":[
             "What did you think? Now you have a planet full of cybermen, they will proceed to delete emotion from the whole Multiverse if let loose. Half of them die in a war.",
             "Well now there are wars and love triangles, all kinds of psychology and philosophy, your species will spend lots of years just figuring themselves out. They won't even care about the rest of the world. No spaceships, no telescopes, no interaction."
          ],
-         "stages": [
-            5,6
+         "stages":[
+            5,
+            6
          ]
       },
       {
          "id":"tectonic",
          "text":"The tectonic plates of your planet are having a tec-tonic tec-hno par-ty.",
-         "options": [
+         "options":[
             "Merge them all into one, to stop it.",
             "Disconnect the speakers.",
-            ""
+            "Let it be."
          ],
-         "correct": [
-            "",
-            ""
+         "correct":[
+            "Unable to move, the party stops.",
+            "No music, no party, even for the plates. Life prospers.",
+            "Their movement connected several before unconnected continents allowing life to mix in different ways."
          ],
-         "incorrect": [
-            "",
-            ""
+         "incorrect":[
+            "Your planet's core can't take the pressure and spills. What did you expect?",
+            "The plates don't have it. The earthquake they produce kills of vast amounts of life on your planet.",
+            "The resonance created by the plates tec-hno tears them apart."
          ],
-         "stages": [
-            0,1,2,3,4,5,6
+         "stages":[
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+         ]
+      },
+      {
+         "id":"thumb",
+         "text":"An organism on your planet bumped it's equivalent-of-a thumb agains it's equivalent-of-a bed.",
+         "options":[
+            "Remove it's existence to cease it's pain.",
+            "Let it be."
+         ],
+         "correct":[
+            "Your mercy fares well with the rest of the planet's inhabitants.",
+            "The planet goes on, with one more loud shout heard.",
+         ],
+         "incorrect":[
+            "It turns out that organism was very key to this planet's life.",
+            "You feel the power of the anger and pain you didn't prevent. The anger is so much for the life forms to take. They die off."
+         ],
+         "stages":[
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+         ]
+      },
+      {
+         "id":"thermodynamics",
+         "text":"The laws of thermodynamics failed. Perpetual motion machines sprout out of nowhere and simultaneously disappear.",
+         "options":[
+            "Fix them by adding more laws.",
+            "Let it be."
+         ],
+         "correct":[
+            "commit: fixed!",
+            "Your planet was in chaos for a while, but soon the perpetual motion machines found their place there.",
+         ],
+         "incorrect":[
+            "Suddenly there is and infinite amount of fundamental laws of nature on your planet. Not sure how you are gonna deal with that.",
+            "Organisms on your planet quickly evolve to contain perpetual motion machines themselves and proceed to quickly kill each other with this new found infinite energy."
+         ],
+         "stages":[
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
          ]
       }
    ]

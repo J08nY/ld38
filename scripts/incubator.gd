@@ -79,7 +79,7 @@ func _on_left_input_event( camera, event, click_pos, click_normal, shape_idx ):
           message = null
       else:
         message = "Cannot evolve, no world!"
-    get_tree().get_root().get_node("Game/HUD").display_message(message)
+    get_tree().get_root().get_node("Game/HUD").display_message(message, 25)
 
 func _on_cylinder_input_event( camera, event, click_pos, click_normal, shape_idx, node, pos ):
   if event.type == InputEvent.MOUSE_BUTTON and event.button_index == BUTTON_LEFT and event.is_pressed():

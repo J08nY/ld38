@@ -1,12 +1,8 @@
 {
  "bases": [
-    "Great, you have succesfully created a new planet!\
-It has a mass of /mass/, it is mainly /type/.",
-    "Your new creation is ready master!\
-A planet was created as you commanded.\
-/mass_comment/\
-/type_comment/",
-    "The materials combined and created a /type/ planet, with a mass of /mass/."
+    "Great, you have succesfully created a new planet!\nIt has a mass of /mass/, it is mainly /type/.",
+    "Your new creation is ready master!\nA planet was created as you commanded.\n/mass_comment/\n/type_comment/",
+    "The materials combined and created a /type/ planet.\nWith a mass of /mass/.\n/mass_comment/\n/type_comment/"
  ],
  "mass_comment": {
     "very_small": "It's so tiny it's largest mountain almost covers it.",
@@ -14,7 +10,7 @@ A planet was created as you commanded.\
     "medium": "Medium sized.",
     "big": "A very large planet.",
     "huge": "It's quiet huge!",
-    "yuge": "It is so YUGE! Something else must be small... Look at those hands. Are they small hands? And he referred to my hands, if they are small, something else must be small."
+    "yuge": "It is so YUGE! Something else must be small... Look at those hands.\nAre they small hands? And he referred to my hands,\nif they are small, something else must be small."
  },
  "type_comment": {
     "solid": "It is clearly solid, with a metallic core.",

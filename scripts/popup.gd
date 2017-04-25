@@ -30,6 +30,7 @@ func set_options(options):
     label.add_text(opt)
     label.newline()
     i += 1
+  button.select(0)
   label.pop()
     
 func set_life(life):

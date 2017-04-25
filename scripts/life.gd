@@ -52,7 +52,7 @@ func choice(i):
     return
   var r = randf()
   var result
-  if r > 0.4:
+  if r > 0.3:
     result = "correct"
     self.stage = int(min(self.stage + 1, 6))
   else:

@@ -15,10 +15,10 @@ func _process(delta):
     var len = lengths[i]
     var label = labels[i]
     var far = run + delta
-    if far >= (3*len/4):
+    if far >= (4*len/5):
       label.set_modulate(Color(1,1,1,0.3))
-    elif far >= len/2:
-      label.set_modulate(Color(1,1,1,0.5))
+    elif far >= (3*len/4):
+      label.set_modulate(Color(1,1,1,0.6))
     if far >= len:
       to_remove.append(i)
     else:

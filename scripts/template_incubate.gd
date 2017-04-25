@@ -14,7 +14,7 @@ func template(world):
   var misc = []
   for mat in world.materials:
     if mat in self.data["misc"]:
-      misc.append(self.data["misc"][mat])
+      misc += self.data["misc"][mat]
   d["misc"] = misc
   print(d)
   return self.replace_all(base, d)

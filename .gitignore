@@ -1,2 +1,4 @@
 out/linux/
 out/w64/
+debug/linux/
+debug/w64/

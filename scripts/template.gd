@@ -20,9 +20,11 @@ func replace_all(base, values):
     if values.has(key):
       var from = values[key]
       if typeof(from) == TYPE_DICTIONARY:
-        replace = from[from.keys()[randi() % from.size()]]
+        if from.size() > 0:
+          replace = from[from.keys()[randi() % from.size()]]
       elif typeof(from) == TYPE_ARRAY:
-        replace = from[randi() % from.size()]
+        if from.size() > 0:
+          replace = from[randi() % from.size()]
       else:
         replace = str(from)
     base = self.regex.sub(base, replace)

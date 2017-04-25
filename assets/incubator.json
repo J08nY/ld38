@@ -1,25 +1,30 @@
 {
    "bases":[
-      "Your planet has /stage/."
+      "Your planet has /stage/. /misc/"
    ],
    "misc":{
       "cardboard_box":[
-         "Life on this planet possesses a weird property, even by Multiverse standards. It seems to be in a state between existing and not existing.",
-         "Cardboard boxes are a common occurence on this planet, everything seems to have them on. Oh god, even the molecules are in cardboard boxes!"
+         "",
+         "Life on this planet possesses a weird property, even by Multiverse standards.\nIt seems to be in a state between existing and not existing.",
+         "Cardboard boxes are a common occurence on this planet,\neverything seems to have them on.\nOh god, even the molecules are in cardboard boxes!"
       ],
       "stage_trees":[
-         "This planet is covered in trees full of solid rocket fuel. They grow to maturity, producing solid fuel in their trunks. When mature, they shed their branches apart from a few top, seed-bearing, ones and lift off, to seek another planet.",
-         "The smell of rocket fuel is very strong at the surface of the planet. It feels like it's evaporating from the trees.",
+         "",
+         "This planet is covered in trees full of solid rocket fuel.\nThey grow to maturity, producing solid fuel in their trunks.\nWhen mature, they shed their branches apart from a few top, seed-bearing, ones\nand lift off, to seek another planet.",
+         "The smell of rocket fuel is very strong at the surface of the planet.\nIt feels like it's evaporating from the trees.",
       ],
       "plumbus":[
+         "",
          "Everybody has a Plumbus at their home, so there is really no point explaining it's usage.",
          "This planet looks like the home planet of the Plumbii origin species."
       ],
       "grey_goo":[
-         "Everythin is quite, what's the word, gooey?"
+         "",
+         "Everything is quite, what's the word, gooey?"
       ],
       "spaghetti_monster":[
-         ""
+         "",
+         "Spaghetti tree, spaghetti grass, spaghetti spaghetti, spgh... etti?"
       ]
    },
    "stage":[
